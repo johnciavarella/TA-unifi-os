@@ -14,9 +14,14 @@ Use the configuration menu to add:
 - Username = Admin username (may be Unifi login) 
 - Password = That password 
 
-# Suggestions
+# Suggestions / Troubleshooting 
 
 - Set your polling slower.
+- If you get a HTTPS timeout error it's most likely invalid creds. Verify creds using the following curl 
+<pre>
+        # authenticate and save the cookie contents in local file cookie.txt with switch '-c'
+        curl -k -X POST --data '{"username": "usr", "password": "$pw"}' --header 'Content-Type: application/json' -c cookie.txt https://udmp:443/api/auth/login
+        # responds with json data </pre>
 
 # API endpoints for Ubiquiti
 

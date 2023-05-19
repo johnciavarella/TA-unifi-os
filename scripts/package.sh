@@ -7,9 +7,6 @@ echo "Creating ${APP_PACKAGE}.tgz"
 TEMPORARY_DIR=$(mktemp -d)
 APP_PACKAGE_TEMP="${TEMPORARY_DIR}/${APP_PACKAGE}"
 
-echo "Deleting pycache dirs..."
-find . -type d -name __pycache__ -delete
-
 echo "Copying files to temp dir for packaging..."
 rm -rf
 mkdir -p "${APP_PACKAGE_TEMP}"

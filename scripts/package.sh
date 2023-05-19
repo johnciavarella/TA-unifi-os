@@ -1,16 +1,36 @@
 #!/bin/bash
 
-APP_DIR="TA-unifi-os"
+APP_PACKAGE="TA-unifi-os"
 
-echo "Creating ${APP_DIR}.tgz"
+echo "Creating ${APP_PACKAGE}.tgz"
 
+TEMPORARY_DIR=$(mktemp -d)
+APP_PACKAGE_TEMP="${TEMPORARY_DIR}/${APP_PACKAGE}"
+
+echo "Deleting pycache dirs..."
 find . -type d -name __pycache__ -delete
-COPYFILE_DISABLE=1 tar czf "${APP_DIR}.tgz" \
+
+echo "Copying files to temp dir for packaging..."
+rm -rf
+mkdir -p "${APP_PACKAGE_TEMP}"
+rsync -a --exclude '*/__pycache__/*' \
+    --exclude "./scripts/*" \
+    --exclude "./.github" \
+    --exclude "./.git" \
+    --exclude "./*.tgz" \
+    . "${APP_PACKAGE_TEMP}"
+
+echo "Creating ${APP_PACKAGE}.tgz"
+COPYFILE_DISABLE=1 tar czf "./${APP_PACKAGE}.tgz" \
+    --cd "${TEMPORARY_DIR}" \
     --exclude '*/__pycache__/*' \
     --exclude "./scripts/*" \
     --exclude "./.github" \
     --exclude "./.git" \
     --exclude "./*.tgz" \
-    ./
+    "${APP_PACKAGE}"
 
-echo "Done!"
+echo "Done, listing files"
+tar tzvf "${APP_PACKAGE}.tgz"
+
+rm -rf "${TEMPORARY_DIR}"

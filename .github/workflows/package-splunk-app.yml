@@ -27,11 +27,12 @@ jobs:
           find . -type f -name '*.conf' -exec ksconf check {} \;
           ./scripts/package.sh
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - name: Release
+        uses: softprops/action-gh-release@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          files: TA-unifi-os.tgz
+          token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: true
-          title: "Latest Build"
-          files: |
-            TA-unifi-os.tgz
+          name: "Latest Build"
+          fail_on_unmatched_files: true
+

@@ -35,4 +35,4 @@ jobs:
           prerelease: true
           name: "Latest Build"
           fail_on_unmatched_files: true
-
+          tag_name: latest

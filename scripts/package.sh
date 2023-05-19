@@ -19,7 +19,7 @@ rsync -a --exclude '*/__pycache__/*' \
 
 echo "Creating ${APP_PACKAGE}.tgz"
 COPYFILE_DISABLE=1 tar czf "./${APP_PACKAGE}.tgz" \
-    --cd "${TEMPORARY_DIR}" \
+    -C "${TEMPORARY_DIR}" \
     --exclude '*/__pycache__/*' \
     --exclude "./scripts/*" \
     --exclude "./.github" \

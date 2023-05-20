@@ -27,62 +27,62 @@ modtime = 1684250554.781583000
 version = 9.0.4.1
 modtime = 1684250554.787586000
 
-[inputs/unfi%3A%2F%2Fwlan]
+[inputs/unifi%3A%2F%2Fwlan]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250602.860275000
 
-[inputs/unfi%3A%2F%2Fusers]
+[inputs/unifi%3A%2F%2Fusers]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250614.721155000
 
-[inputs/unfi%3A%2F%2Fuserinfo]
+[inputs/unifi%3A%2F%2Fuserinfo]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250627.952547000
 
-[inputs/unfi%3A%2F%2Fsysteminfo]
+[inputs/unifi%3A%2F%2Fsysteminfo]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250642.086599000
 
-[inputs/unfi%3A%2F%2Fswitchports]
+[inputs/unifi%3A%2F%2Fswitchports]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250651.840071000
 
-[inputs/unfi%3A%2F%2Fsettings]
+[inputs/unifi%3A%2F%2Fsettings]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250667.007430000
 
-[inputs/unfi%3A%2F%2Froutersuser]
+[inputs/unifi%3A%2F%2Froutersuser]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250678.558720000
 
-[inputs/unfi%3A%2F%2Fhealth]
+[inputs/unifi%3A%2F%2Fhealth]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250689.054180000
 
-[inputs/unfi%3A%2F%2Faprouge]
+[inputs/unifi%3A%2F%2Faprouge]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250701.836156000
 
-[inputs/unfi%3A%2F%2Froutesactive]
+[inputs/unifi%3A%2F%2Froutesactive]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250720.019745000
 
-[inputs/unfi%3A%2F%2Fevents]
+[inputs/unifi%3A%2F%2Fevents]
 owner = admin
 version = 9.0.4.1
 modtime = 1684250729.525070000
 
-[inputs/unfi%3A%2F%2Falarm]
+[inputs/unifi%3A%2F%2Falarm]
 owner = admin
 version = 9.0.4.1
 modtime = 1684251341.336864000

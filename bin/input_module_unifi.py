@@ -51,8 +51,6 @@ def validate_input(helper, definition):
 
 def collect_events(helper, ew):
 
-    import requests
-    from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 
     # Auth - Get username and password
@@ -76,6 +74,11 @@ def collect_events(helper, ew):
 
     #Get the data
     data = s.get(rest_url, headers = headers, verify = False, timeout = 1)
-    sourcetype_name = "unifi - "+helper.get_arg("rest_endpoint")
-    event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(), sourcetype=sourcetype_converted, data=data.text)
+    # sourcetype_name = "unifi - "+helper.get_arg("rest_endpoint")
+    if data.status_code == 404:
+        payload=f"ERROR: 404 accessing {helper.get_arg('rest_endpoint')}"
+    else:
+        payload = data.text
+
+    event = helper.new_event(source=helper.get_input_type(), index=helper.get_output_index(), sourcetype=sourcetype_converted, data=payload)
     ew.write_event(event)

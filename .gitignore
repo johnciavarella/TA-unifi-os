@@ -1,0 +1,3 @@
+TA-unifi-os.tgz
+# system-specific pycache files
+*.pyc

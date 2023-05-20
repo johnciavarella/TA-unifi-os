@@ -235,8 +235,8 @@
             },
             "services": [
                 {
-                    "name": "unfi",
-                    "title": "unfi",
+                    "name": "unifi",
+                    "title": "unifi",
                     "entity": [
                         {
                             "field": "name",

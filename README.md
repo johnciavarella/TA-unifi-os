@@ -6,7 +6,7 @@
 
 This is a Splunk Unifi TA leveraging the API calls. It is intended to close the gap on the lack of fidelity from syslog messages generated. 
 
-Eventually will roll in syslog messages and SNMP to get a 360 view of Unifi and UISP products 
+Eventually will roll in syslog messages and SNMP to get a 360 view of Unifi and UISP products. Fair warning this was thrown together quickly in a few hours. 
 
 # Setup 
 Use the configuration menu to add: 

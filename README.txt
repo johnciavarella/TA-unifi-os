@@ -1,3 +1,3 @@
-This app is for ingesting Unfi via API.
+This app is for ingesting Unifi via API.
 
-- John Ciavarella May 2023 - 
+- John Ciavarella May 2023 -

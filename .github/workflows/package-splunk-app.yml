@@ -1,0 +1,38 @@
+---
+name: "Package Splunk App"
+
+"on":
+  push:
+    branches:
+      - main  # Set a branch to deploy
+
+jobs:
+  package:
+    permissions:
+      id-token: write # auth things
+      contents: write # for pushing releases
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Package the app
+        run: |
+          python --version
+          python -m pip install ksconf
+          find . -type f -name '*.conf' -exec ksconf check {} \;
+          ./scripts/package.sh
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: TA-unifi-os.tgz
+          token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: true
+          name: "Latest Build"
+          fail_on_unmatched_files: true
+          tag_name: latest

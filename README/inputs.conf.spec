@@ -1,2 +1,2 @@
-[unfi://<name>]
+[unifi://<name>]
 rest_endpoint =
